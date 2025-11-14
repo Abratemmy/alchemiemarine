@@ -1,0 +1,208 @@
+.aboutSession{
+    width: 100%;
+    position: relative;
+    padding: 70px 0px 30px 0px;
+    background: var(--backgroundColor);
+
+    .image{
+        width: 100%;
+        img{
+            width: 100%;
+        }
+    }
+    .aboutContent{
+        .main-heading{
+            padding-bottom: 20px;
+        }
+        .page-text{
+            margin-bottom: 10px;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li{
+                padding-bottom: 10px;
+                .icon{
+                    color: var(--secondaryColor);
+                    font-size: 18px;
+                }
+                span{
+                    padding-left: 10px;
+                }
+            }
+        }
+    }
+
+
+    // visionMission section
+    .visionMission{
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-top: 40px;
+        .visionContainer{
+            flex: 1;
+            background: var(--primaryColor);
+            .page-text{
+                color: #fff;
+                padding-top: 20px;
+            }
+        }
+        .missionContainer{
+            flex: 1;
+            background: var(--secondaryColor);
+             
+        }
+        .textContainer{
+            height: 300px;
+             padding: 50px 70px;
+            .icon{
+                color: #fff;
+                font-size: 40px;
+            }
+            .sub-heading{
+                padding: 15px 0px;
+            }
+            
+        }
+
+        @media screen and (max-width: 991px){
+            flex-direction: column;
+        }
+         @media screen and (max-width: 500px){
+            .textContainer{
+                padding: 30px 20px;
+            }
+        }
+    }
+
+    // another session here
+    .coreValueContainer{
+        width: 100%;
+        position: relative;
+        .topContainer{
+            position: relative;
+            text-align: center;
+            width: 70%;
+            margin: 60px auto 20px;
+        }
+    
+        @media screen and (max-width: 900px){
+            .topContainer{
+                width: 90%;
+            }
+        }
+        @media screen and (max-width: 768px){
+            .topContainer{
+                width: 100%;
+            }
+        }
+        .valueContainerCard{
+            position: relative;
+            box-shadow: 9px 12px 38px 0px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s;
+            background: #ffffff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            padding: 30px ;
+            height: 280px;
+            z-index:0;
+            border-radius: 16px;
+            .iconCard{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: var(--primaryColor);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .icon{
+                    font-family: var(--headingFamily);
+                    font-size: 23px;
+                    font-weight: 600;
+                    color: #fff;
+                }
+            }
+            .cardTitle{
+                font-family: var(--headingFamily);
+                font-weight: 700;
+                font-weight: 18px;
+                padding: 10px 0px;
+                color: var(--blackColor);
+                text-transform: uppercase;
+            }
+            .text{
+                font-family: var(--textFamily);
+                font-weight: 16px;
+                padding: 5px 0px;
+                color: var(--blackColor);
+            }
+        }
+        .valueContainerCard2{
+            background: var(--secondaryColor);
+            color: #fff;
+            .cardTitle, .text{
+                color: #fff!important;
+            }
+        }
+        .valueContainerCard:before{
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(
+            rgba(35, 58, 77, 0.7),
+            rgba(35, 58, 77, 0.7)
+            ),
+            url("../../Assets/image10.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 0;
+            content: "";
+            transform:  perspective(400px) scaleX(0);
+            transition: all 0.4s linear;
+            z-index: 0; 
+            border-bottom: 2px solid var(--primaryColor);
+        }
+        .valueContainerCard:hover:before{
+            opacity: 1;
+            transform: perspective(400px) scale(1.0);
+        }
+        .valueContainerCard .content{
+            position: relative;
+            z-index: 1; 
+        }
+        .valueContainerCard:hover .cardTitle,
+        .valueContainerCard:hover .text{
+            color: #fff!important;
+        }
+
+        @media screen and (min-width: 767px) and (max-width: 992px){
+            .valueContainerCard{
+                height: 250px;
+            }
+        }
+    }
+
+   
+}
+
+
+ // another session for our team here
+.ourTeamSession{
+    position: relative;
+    width: 100%;
+    background: var(--backgroundColor);
+    padding: 70px 0px 70px;
+
+    .subTitle{
+        font-family: var(--headingFamily);
+        padding-bottom: 20px;
+         font-size: 18px;
+        color: var(--blackColor);
+        font-weight: 600;
+    }
+    .page-text{
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+}

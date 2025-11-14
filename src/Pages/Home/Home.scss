@@ -1,0 +1,106 @@
+.homeAboutContainer {
+    padding: 100px 0;
+    background: var(--backgroundColor);
+
+    .about-wrapper {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 50px;
+
+        @media (max-width: 991px) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+  .about-image {
+    flex: 1;
+
+    img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .about-content {
+        flex: 1;
+        .about-highlights {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+
+            @media (max-width: 600px) {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .highlight {
+                text-align: center;
+                background: #fff;
+                padding: 20px 30px;
+                border-radius: 16px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+                transition: all 0.4s ease;
+                position: relative;
+                overflow: hidden;
+                cursor: pointer;
+
+                // background overlay
+                &::before {
+                content: "";
+                position: absolute;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: linear-gradient(
+                    rgba(35, 58, 77, 0.7),
+                    rgba(35, 58, 77, 0.7)
+                    ),
+                    url("../../Assets/overlayImage.webp");
+                background-size: cover;
+                background-position: center;
+                opacity: 0;
+                transform: scale(1.2);
+                transition: all 0.5s ease;
+                z-index: 0;
+                border-bottom: 3px solid var(--primaryColor);
+                }
+
+                &:hover::before {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+
+                h3, p {
+                    position: relative;
+                    z-index: 1;
+                }
+
+                h3 {
+                    font-size: 36px;
+                    color: var(--accentColor);
+                    margin-bottom: 8px;
+                    font-weight: 800;
+                    transition: color 0.3s ease;
+                }
+
+                p {
+                    font-size: 15px;
+                    color: #444;
+                    transition: color 0.3s ease;
+                }
+
+                &:hover {
+                    transform: translateY(-6px);
+                }
+
+                &:hover h3,
+                &:hover p {
+                    color: #fff;
+                }
+            }
+        }
+
+    }
+}

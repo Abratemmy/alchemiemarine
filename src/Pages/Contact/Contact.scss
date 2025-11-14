@@ -1,0 +1,262 @@
+.contactContainer{
+    position: relative;
+    width: 100%;
+    padding: 60px 0px;
+    background: var(--backgroundColor);
+    .topContainer{
+        width: 70%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    @media screen and (max-width: 991px){
+        .topContainer{
+            width: 90%;
+        }
+    }
+    @media screen and (max-width: 768px){
+        .topContainer{
+            width: 100%;
+        }
+    }
+    
+
+    .contactCardContainer{
+        margin: 50px 0px 10px;
+        .contactCard{
+            position: relative;
+            box-shadow: 9px 12px 38px 0px rgba(0, 0, 0, 0.103);
+            transition: all 0.5s;
+            background: #fff;
+            padding: 30px ;
+            height: 200px;
+            border-radius: 16px;
+            z-index:0;
+        }
+        .contactCard:before{
+            position: absolute;
+             border-radius: 16px;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(
+                rgba(35, 58, 77, 0.7),
+                rgba(35, 58, 77, 0.7)
+            ),
+            url("../../Assets/image10.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            content: "";
+            transform:  perspective(400px) scaleX(0);
+            transition: all 0.4s linear;
+            z-index: 0; 
+            border-bottom: 2px solid var(--primaryColor);
+        }
+        
+        .contactCard:hover:before{
+            opacity: 1;
+            transform: perspective(400px) scale(1.0);
+        }
+        .contactCard21{
+            background: linear-gradient(
+                rgba(35, 58, 77, 0.7),
+                rgba(35, 58, 77, 0.7)
+            ),
+            url("../../Assets/image8.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            a, h3, .icon{
+                color: #fff!important;
+            }
+        }
+        .contactCard .content{
+            position: relative;
+            z-index: 1; 
+        }
+        .contactCard{
+            font-family: var(--headingFamily);
+            .iconDiv{
+                position: relative;
+                padding-bottom: 20px;
+                .icon{
+                    font-size: 40px;
+                    color: var(--primaryColor);
+
+                }
+            }
+            h3{
+                font-weight: 600;
+                color:#222;
+            }
+            p{
+                font-family: var(--textFamily);
+                font-size: 16px;
+                a{
+                    color: #222;
+                    text-decoration: none;
+                    &:hover{
+                        color: var(--primaryColor);
+                    }
+                }
+            }
+        }
+        .contactCard:hover h3,
+        .contactCard:hover p,
+        .contactCard:hover .icon,
+        .contactCard:hover p a{
+            color: #fff;
+        }
+    }
+}
+
+.pageForm {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    .page-text{
+        font-weight: 600;
+    }
+
+    .formGroup {
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--blackColor);
+            font-size: 14px;
+            font-family: var(--textFamily);
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px 15px;
+            border: 1.8px solid #d1d1d1;
+            border-radius: 5px;
+            font-size: 14px;
+            background: #f9fafc;
+            transition: 0.3s ease;
+            appearance: none;
+            outline: none;
+            font-family: var(--headingFamily);
+            color: var(--blackColor);
+            &:focus{
+                border-color: var(--secondaryColor);
+                background: #fff;
+                box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.1);
+            }
+
+            &::placeholder {
+                color: #aaa;
+            }
+        }
+
+        .error {
+            color: #d93025;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+    }
+
+    .submitBtn {
+        width: 100%;
+        padding: 14px;
+        background: var(--accentColor);
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        letter-spacing: 0.3px;
+
+        &:hover {
+        background: var(--accentColor, #fff);
+        transform: translateY(-1px);
+        }
+    }
+    .submitDefault{
+        background: rgb(158, 156, 156);
+        cursor: not-allowed!important;
+        opacity: 0.6;
+        &:hover{
+            background: rgb(158, 156, 156);
+        }
+    }
+}
+
+/* ✅ Success Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.modalBox {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 14px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  animation: popIn 0.3s ease;
+
+  h3 {
+    color: var(--primaryColor);
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .closeBtn {
+    padding: 10px 25px;
+    background: var(--secondaryColor);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    &:hover {
+      background: var(--primaryColor);
+    }
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .pageForm {
+    padding: 20px;
+  }
+}
+

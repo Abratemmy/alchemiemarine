@@ -1,0 +1,56 @@
+.ButtonContainer {
+    position: relative;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s linear;
+    font-family: var(--headingFamily);
+    z-index: 1; 
+    color: var(--primaryColor); 
+    background: var(--accentColor);
+    line-height: 48px;
+    padding: 5px 25px;
+    width: fit-content;
+    overflow: hidden; 
+    text-decoration: none;
+}
+.ButtonContainer2{
+    border: 1px solid var(--secondaryColor);
+    background: transparent;
+    color: var(--secondaryColor);
+}
+.ButtonContainer3{
+    border: 1px solid #222222;
+    background: transparent;
+    color: #222222;
+}
+
+.ButtonContainer:before {
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: var(--primaryColor);
+    opacity: 0;
+    content: "";
+    transform: scale(0.5) rotateX(45deg);
+    transition: all 0.4s linear;
+    z-index: -1; 
+}
+.ButtonContainer3:before{
+    background: var(--primaryColor);
+}
+
+.ButtonContainer:hover:before {
+    opacity: 1;
+    transform: scale(1.0) rotateX(0deg);
+}
+
+.ButtonContainer:hover {
+    color: #ffffff;
+}
+
+.ButtonContainer .loginIcon{
+    font-size: 20px;
+}
